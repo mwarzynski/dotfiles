@@ -185,5 +185,4 @@ extract () {
     fi
 }
 
-~/.time.sh
 cat ~/.todo
