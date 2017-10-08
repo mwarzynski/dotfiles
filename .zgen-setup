@@ -36,8 +36,10 @@ load-starter-plugin-list() {
 
   # If zsh-syntax-highlighting is bundled after zsh-history-substring-search,
   # they break, so get the order right.
-  zgen load zsh-users/zsh-syntax-highlighting
+  zgen load zdharma/fast-syntax-highlighting
   zgen load zsh-users/zsh-history-substring-search
+
+  zgen load zdharma/history-search-multi-word
 
   # Set keystrokes for substring searching
   zmodload zsh/terminfo
@@ -88,12 +90,6 @@ load-starter-plugin-list() {
   zgen oh-my-zsh plugins/rsync
   zgen oh-my-zsh plugins/screen
   zgen oh-my-zsh plugins/vagrant
-
-  if [ $(uname -a | grep -ci Darwin) = 1 ]; then
-    # Load OSX-specific plugins
-    zgen oh-my-zsh plugins/brew
-    zgen oh-my-zsh plugins/osx
-  fi
 
   # A set of shell functions to make it easy to install small apps and
   # utilities distributed with pip.
