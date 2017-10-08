@@ -10,8 +10,11 @@ chsh -s /bin/zsh
 # Install zgen.
 git clone https://github.com/tarjoilija/zgen.git "${HOME}/.zgen"
 
-# Get dotfiles.
+# Get dotfiles to HOME directory.
 git clone git@github.com:mwarzynski/dotfiles.git "${HOME}/dotfiles"
+shopt -s dotglob nullglob
+mv dotfiles/* ~/
+rm -rf .git
 
 # Install nvim
 sudo add-apt-repository ppa:neovim-ppa/stable
@@ -26,7 +29,5 @@ pip3 install neovim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-
-# Create file for todo notes.
-touch ~/.todo
-
+# TODO
+# gcc, g++, gdb, peda, pwn tools
