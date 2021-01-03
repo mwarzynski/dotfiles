@@ -2,24 +2,19 @@ set nocompatible
 filetype off
 
 
-call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 
 " Universal set of defaults that (hopefully) everyone can agree on
 Plug 'tpope/vim-sensible'
 
-" Mappings to easily delete, change and add such surroundings in pairs
-Plug 'tpope/vim-surround'
+" File Tree
+Plug 'preservim/nerdtree'
 
 " Show GIT changes
 Plug 'airblade/vim-gitgutter'
 
-" File tree view
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
-
 " Pretty statusbar
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+ Plug 'itchyny/lightline.vim'
 
 " A collection of language packs for Vim
 Plug 'sheerun/vim-polyglot'
@@ -27,74 +22,13 @@ Plug 'sheerun/vim-polyglot'
 " Colorschemes
 Plug 'flazz/vim-colorschemes'
 
-" C completion
-Plug 'roxma/nvim-completion-manager'
-Plug 'roxma/ncm-clang'
-
-" Autocompletion
-Plug 'Shougo/deoplete.nvim'
-
-" Python completion
-Plug 'zchee/deoplete-jedi'
-
-" Syntastic plugin (for checking syntax)
-Plug 'vim-syntastic/syntastic'
-
-" Go plugin
-"Plug 'fatih/vim-go'
-
 call plug#end()
-
-
-
 
 
 " Plugin config.
 
-let g:airline_powerline_fonts = 1
-let g:airline_theme='dark'
-
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 0
-let g:airline#extensions#tabline#show_splits = 0
-let g:airline#extensions#tabline#show_tabs = 1
-let g:airline#extensions#tabline#show_tab_nr = 0
-let g:airline#extensions#tabline#show_tab_type = 0
-let g:airline#extensions#tabline#close_symbol = '×'
-let g:airline#extensions#tabline#show_close_button = 0
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = { 'mode': '', 'passive_filetypes': ['asm'] }
-
-let g:syntastic_c_no_default_include_dirs = 1
-let g:syntastic_c_compiler_options = ''
-
-
-let g:clang_library_path='/usr/lib'
-au FileType c,cpp  nmap gd <Plug>(clang_complete_goto_declaration)
-
-let g:deoplete#enable_at_startup = 1
-
-let g:python_host_prog = '/usr/bin/python2'
-let g:python3_host_prog = '/usr/bin/python3'
-
-autocmd CompleteDone * pclose!
-
-
-
-
-
 " ENV
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-
 
 
 
@@ -185,8 +119,6 @@ set foldcolumn=1
 
 
 
-
-
 " Colors and Fonts
 
 " enable syntax highlighting
@@ -250,9 +182,8 @@ set wrap "Wrap lines
 
 " Moving around, tabs, windows and buffers
 
-" move vertically visually
-nnoremap k gj
-nnoremap j gk
+" Make things clickable (tabs)
+set mouse=a
 
 " useful mappings for managing tabs
 nnoremap <C-PageDown> :tabprevious<CR>
@@ -272,7 +203,6 @@ endtry
 
 " return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
 
 
 
