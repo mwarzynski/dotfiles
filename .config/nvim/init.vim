@@ -8,19 +8,33 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 
 " File Tree
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
+
+" Fuzzy finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Show GIT changes
 Plug 'airblade/vim-gitgutter'
 
 " Pretty statusbar
- Plug 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'
 
 " A collection of language packs for Vim
 Plug 'sheerun/vim-polyglot'
 
 " Colorschemes
 Plug 'flazz/vim-colorschemes'
+
+" Auto Completion
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+" Copilot
+" Plug 'github/copilot.vim'
+
+" Python linter Black
+" Plug 'psf/black'
+
 
 call plug#end()
 
@@ -30,7 +44,13 @@ call plug#end()
 " ENV
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
+let g:copilot_enable = 0
 
+" Run deoplete.nvim automatically
+" let g:deoplete#enable_at_startup = 1
+
+" autocmd BufWritePost *.py execute ':Black'
+" let g:black_quiet = 1
 
 " General settings.
 
@@ -39,6 +59,8 @@ set number
 
 " sets how many lines of history VIM has to remember
 set history=500
+
+set colorcolumn=160
 
 " enable filetype plugins
 filetype plugin on
@@ -59,12 +81,18 @@ let g:mapleader = ","
 " Shortcuts
 
 " map NERDTree to Ctrl + N
-map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<enter>
 
 " map CTRL + d to quit
-map <C-d> :q<CR>
+map <C-d> :q<enter>
 
+" map CTRL + s to write (save)
+map <C-s> :w<enter>
 
+" Map CTRL + e to open files with FZF.
+map <C-e> :Files<enter>
+" Map CTRL + b to switch buffers.
+map <C-b> :Buffers<enter>
 
 
 
@@ -125,6 +153,7 @@ set foldcolumn=1
 let base16colorspace=256
 
 colorscheme PaperColor
+
 syntax enable
 set background=dark
 
@@ -141,9 +170,6 @@ set encoding=utf8
 
 " use Unix as the standard file type
 set ffs=unix,dos,mac
-
-
-
 
 
 
@@ -222,8 +248,8 @@ autocmd BufWrite *.c :call DeleteTrailingWS()
 autocmd BufWrite *.cpp :call DeleteTrailingWS()
 autocmd BufWrite *.cc :call DeleteTrailingWS()
 autocmd BufWrite *.h :call DeleteTrailingWS()
-
-
+autocmd BufWrite *.rs :call DeleteTrailingWS()
+autocmd BufWrite *.tex :call DeleteTrailingWS()
 
 
 
@@ -232,10 +258,6 @@ autocmd BufWrite *.h :call DeleteTrailingWS()
 
 " remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-
-" toggle paste mode on and off
-map <leader>pp :setlocal paste!<cr>
-
 
 
 
