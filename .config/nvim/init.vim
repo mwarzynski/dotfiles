@@ -152,8 +152,6 @@ set foldcolumn=1
 " enable syntax highlighting
 let base16colorspace=256
 
-colorscheme PaperColor
-
 syntax enable
 set background=dark
 
