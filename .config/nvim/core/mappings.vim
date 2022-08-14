@@ -1,3 +1,5 @@
+let mapleader = " "
+
 " Save file with <leader>s
 nnoremap <leader>s <cmd>w<cr>
 

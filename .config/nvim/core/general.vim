@@ -1,8 +1,3 @@
-" === VIM built-in settings ===
-set nocompatible
-filetype plugin indent on
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
 " turn backup off (you should probably use git to control the code)
 set nobackup
 set nowb
@@ -94,5 +89,3 @@ augroup MUTEX
     autocmd!
     autocmd BufWritePre * :call DeleteTrailingWS()
 augroup END
-
-let mapleader = " "

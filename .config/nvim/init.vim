@@ -1,18 +1,9 @@
-let s:expect_ver = printf('nvim-%s', '0.7.2')
-let s:actual_ver = matchstr(execute('version'), 'NVIM v\zs[^\n]*')
-
-if !has(s:expect_ver)
-  echohl Error | echomsg printf("%s required, but got nvim %s!", s:expect_ver, s:actual_ver) | echohl None
-  finish
-endif
+lua require('plugins')
 
 let s:core_conf_files = [
-      \ 'globals.vim',
-      \ 'plugins.vim',
+      \ 'general.vim',
       \ 'colorscheme.vim',
-      \ 'autocompletion.vim',
       \ 'mappings.vim',
-      \ 'telescope.vim',
       \ 'go.vim'
       \ ]
 
@@ -20,4 +11,4 @@ for s:fname in s:core_conf_files
   execute printf('source %s/core/%s', stdpath('config'), s:fname)
 endfor
 
-" luafile $HOME/.config/nvim/lua/lsp.lua
+lua require('coq_configuration')

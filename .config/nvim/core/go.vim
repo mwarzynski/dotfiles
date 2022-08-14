@@ -1,6 +1,3 @@
-" Disable GOPLS
-let g:go_gopls_enabled = 0
-
 " Go syntax highlighting
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
@@ -27,10 +24,9 @@ let g:go_highlight_variable_assignments = 1
 let g:go_highlight_diagnostic_errors = 1
 let g:go_highlight_diagnostic_warnings = 1
 
+" Show documentation
+let g:go_doc_popup_window = 1
+
 " Auto formatting and importing
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"
-
-" " Enable Rainbow parentheses for Go code.
-" au filetype go call rainbow#load()
-" let g:rainbow_active = 1
