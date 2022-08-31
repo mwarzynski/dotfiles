@@ -17,17 +17,4 @@ return require('packer').startup(function()
     -- Autocompletion -- fast as fuck.
     use {'ms-jpq/coq_nvim', branch = 'coq'}
     use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
-    use {'folke/which-key.nvim'}
-    use {
-      "neovim/nvim-lspconfig",
-      opt = true,
-      event = "BufReadPre",
-      wants = { "nvim-lsp-installer" },
-      config = function()
-        require("config.lsp").setup()
-      end,
-      requires = {
-        "williamboman/nvim-lsp-installer",
-      },
-    }
 end)
