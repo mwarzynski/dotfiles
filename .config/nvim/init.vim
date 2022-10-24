@@ -5,7 +5,8 @@ let s:core_conf_files = [
       \ 'colorscheme.vim',
       \ 'mappings.vim',
       \ 'go.vim',
-      \ 'python.vim'
+      \ 'python.vim',
+      \ 'rust.vim'
       \ ]
 
 for s:fname in s:core_conf_files

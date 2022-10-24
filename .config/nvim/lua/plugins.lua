@@ -11,10 +11,13 @@ return require('packer').startup(function()
     -- Python linter.
     use "psf/black"
 
-    -- Golang language plugin.
-    use "fatih/vim-go"
+    -- -- Golang language plugin.
+    -- use "fatih/vim-go"
 
-    -- Autocompletion -- fast as fuck.
-    use {'ms-jpq/coq_nvim', branch = 'coq'}
-    use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
+    -- -- Autocompletion -- fast as fuck.
+    -- use {'ms-jpq/coq_nvim', branch = 'coq'}
+    -- use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
+
+    -- Rust
+    use "rust-lang/rust.vim"
 end)
