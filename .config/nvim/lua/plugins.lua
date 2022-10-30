@@ -7,6 +7,11 @@ return require('packer').startup(function()
     use "itchyny/lightline.vim"
     -- GIT status of the current file -- shows changed/added lines.
     use "airblade/vim-gitgutter"
+    -- Telescope (easy access to files)
+    use {
+      'nvim-telescope/telescope.nvim', tag = '0.1.0',
+      requires = { {'nvim-lua/plenary.nvim'} }
+    }
 
     -- Python linter.
     use "psf/black"
