@@ -5,6 +5,7 @@ let s:core_conf_files = [
       \ 'colorscheme.vim',
       \ 'mappings.vim',
       \ 'telescope.vim',
+      \ 'completion.vim',
       \ 'go.vim',
       \ 'python.vim',
       \ 'rust.vim'

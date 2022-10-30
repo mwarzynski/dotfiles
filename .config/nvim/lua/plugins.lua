@@ -19,7 +19,9 @@ return require('packer').startup(function()
     -- -- Golang language plugin.
     -- use "fatih/vim-go"
 
-    -- -- Autocompletion -- fast as fuck.
+    -- Autocompletion -- conquer of completion
+    use {'neoclide/coc.nvim', branch = 'release'}
+    -- Autocompletion -- fast as fuck.
     -- use {'ms-jpq/coq_nvim', branch = 'coq'}
     -- use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
 
