@@ -13,17 +13,17 @@ return require('packer').startup(function()
       requires = { {'nvim-lua/plenary.nvim'} }
     }
 
-    -- Python linter.
-    use "psf/black"
-
-    -- -- Golang language plugin.
-    -- use "fatih/vim-go"
-
     -- Autocompletion -- conquer of completion
     use {'neoclide/coc.nvim', branch = 'release'}
     -- Autocompletion -- fast as fuck.
     -- use {'ms-jpq/coq_nvim', branch = 'coq'}
     -- use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
+
+    -- Python linter.
+    use "psf/black"
+
+    -- Golang language plugin.
+    use "fatih/vim-go"
 
     -- Rust
     use "rust-lang/rust.vim"
