@@ -4,7 +4,6 @@ lsp.preset('recommended')
 
 lsp.ensure_installed({
 	'rust_analyzer',
-	'sumneko_lua',
 	'pyright',
 	'gopls',
 })
