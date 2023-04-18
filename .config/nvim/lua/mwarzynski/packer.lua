@@ -47,4 +47,7 @@ return require('packer').startup(function(use)
 
   -- Go
   use 'fatih/vim-go'
+
+  -- Copilot
+  use 'github/copilot.vim'
 end)

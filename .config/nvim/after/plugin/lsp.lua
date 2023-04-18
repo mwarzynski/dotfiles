@@ -3,10 +3,12 @@ local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
 lsp.ensure_installed({
-	'rust_analyzer',
-	'pyright',
-	'gopls',
+    'rust_analyzer',
+    'pyright',
+    'gopls',
+    'clangd',
 })
+
 
 local cmp = require('cmp')
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
