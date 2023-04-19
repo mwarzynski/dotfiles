@@ -48,6 +48,9 @@ return require('packer').startup(function(use)
   -- Go
   use 'fatih/vim-go'
 
+  -- Python
+  use 'psf/black'
+
   -- Copilot
   use 'github/copilot.vim'
 end)
