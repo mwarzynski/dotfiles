@@ -7,6 +7,7 @@ lsp.ensure_installed({
     'pyright',
     'gopls',
     'clangd',
+    'tsserver',
 })
 
 
