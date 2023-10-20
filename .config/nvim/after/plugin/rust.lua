@@ -12,7 +12,7 @@ rt.setup({
 })
 
 local autocmd = vim.api.nvim_create_autocmd
-autocmd('BufRead,BufNewFile', {
+autocmd('BufRead', {
     pattern = "*.rs",
     command = "autocmd BufWritePre <buffer> lua vim.lsp.buf.format()"
 })
