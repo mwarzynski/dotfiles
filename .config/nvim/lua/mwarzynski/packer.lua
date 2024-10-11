@@ -55,6 +55,9 @@ return require('packer').startup(function(use)
   -- Python
   use 'psf/black'
 
-  -- Copilot
-  use 'github/copilot.vim'
+  -- D2 (Diagrams)
+  use 'terrastruct/d2-vim'
+
+  -- Built-in generation based on ollama
+  -- use "David-Kunz/gen.nvim"
 end)
