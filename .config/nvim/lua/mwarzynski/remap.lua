@@ -15,3 +15,7 @@ vim.api.nvim_set_keymap('n', 'gr', ':lua vim.lsp.buf.rename()<CR>', { silent = f
 vim.keymap.set("v", "<leader>f", function()
     vim.lsp.buf.format()
 end)
+
+-- Gen (Ollama)
+
+vim.keymap.set({ 'n', 'v' }, '<C-a>', ':Gen<CR>')
