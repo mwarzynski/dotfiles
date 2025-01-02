@@ -1,0 +1,15 @@
+window-decoration = true
+window-theme = auto
+gtk-titlebar = false
+theme = Adventure
+
+font-family = JetBrains Mono
+font-size = 15
+
+keybind = alt+1=unbind
+keybind = alt+2=unbind
+keybind = alt+3=unbind
+keybind = alt+4=unbind
+keybind = alt+5=unbind
+keybind = alt+6=unbind
+
