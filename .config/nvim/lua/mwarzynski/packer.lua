@@ -59,5 +59,5 @@ return require('packer').startup(function(use)
   use 'terrastruct/d2-vim'
 
   -- Built-in generation based on ollama
-  -- use "David-Kunz/gen.nvim"
+  use "David-Kunz/gen.nvim"
 end)
