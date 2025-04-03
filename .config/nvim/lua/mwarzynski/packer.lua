@@ -1,5 +1,3 @@
-vim.cmd [[packadd packer.nvim]]
-
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
@@ -58,6 +56,7 @@ return require('packer').startup(function(use)
   -- D2 (Diagrams)
   use 'terrastruct/d2-vim'
 
-  -- Built-in generation based on ollama
+  -- AI
   use "David-Kunz/gen.nvim"
+  use "github/copilot.vim"
 end)
