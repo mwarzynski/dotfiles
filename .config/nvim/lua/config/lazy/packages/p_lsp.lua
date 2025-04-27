@@ -1,6 +1,9 @@
 return {
     -- Syntax hightlighting
-    "nvim-treesitter/nvim-treesitter",
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate"
+    },
 
     -- LSP
     "williamboman/mason.nvim",
