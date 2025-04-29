@@ -19,6 +19,7 @@ require("config.lsp.format_whitespace")
 
 require("config.lsp.lang_python")
 require("config.lsp.lang_go")
+require("config.lsp.lang_docker")
 
 vim.api.nvim_set_keymap('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', { silent = true })
 vim.api.nvim_set_keymap('n', '<C-h>', ':lua vim.lsp.buf.hover()<CR>', { silent = true })
