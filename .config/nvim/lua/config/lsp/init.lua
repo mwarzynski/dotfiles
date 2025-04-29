@@ -15,6 +15,7 @@ require("mason-lspconfig").setup_handlers({
 
 require("config.lsp.completion")
 require("config.lsp.format")
+require("config.lsp.format_whitespace")
 
 require("config.lsp.lang_python")
 require("config.lsp.lang_go")
