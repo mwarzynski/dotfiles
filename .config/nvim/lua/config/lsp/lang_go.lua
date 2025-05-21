@@ -1,5 +1,19 @@
-local autocmd = vim.api.nvim_create_autocmd
-autocmd('BufRead', {
-    pattern = "*.go",
-    command = "autocmd BufWritePre <buffer> lua vim.lsp.buf.format()"
-})
+local M = {}
+
+function M.setup(on_attach_func, capabilities_table)
+    require('lspconfig').gopls.setup({
+        on_attach = on_attach_func,
+        capabilities = capabilities_table,
+        settings = {
+            gopls = {
+                completeUnimported = true,
+                usePlaceholders = true,
+                analyses = {
+                    unusedparams = true,
+                },
+            },
+        },
+    })
+end
+
+return M
