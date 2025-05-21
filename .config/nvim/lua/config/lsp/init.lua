@@ -6,11 +6,9 @@ vim.diagnostic.config({
 })
 
 require("mason").setup()
-require("mason-lspconfig").setup({})
-require("mason-lspconfig").setup_handlers({
-    function(server_name)
-      require("lspconfig")[server_name].setup({})
-    end,
+require("mason-lspconfig").setup({
+    automatic_enable = true,
+    -- ensure_installed = { "lua_ls", "python_ls", "gopls", "dockerls" },
 })
 
 require("config.lsp.completion")
