@@ -16,7 +16,23 @@ function M.setup(on_attach)
             -- Python
             null_ls.builtins.formatting.isort,
             null_ls.builtins.formatting.black.with({
-                extra_args = { "--fast", "-l", "120" },
+                extra_args = function(params)
+                    local default_args = { "--fast" }
+                    local project_root = vim.fs.find({ 'pyproject.toml', '.git' }, { upward = true, path = params.bufname })[1]
+                    local pyproject_toml_path = nil
+
+                    if project_root then
+                        pyproject_toml_path = project_root .. "/pyproject.toml"
+                    end
+
+                    if pyproject_toml_path and vim.fn.filereadable(pyproject_toml_path) == 1 then
+                        return default_args
+                    else
+                        -- No pyproject.toml found (or no project root found),
+                        -- so use the Neovim default line length of 120.
+                        return vim.list_extend(vim.deepcopy(default_args), { "-l", "120" })
+                    end
+                end,
             }),
         },
         on_attach = function(client, bufnr)

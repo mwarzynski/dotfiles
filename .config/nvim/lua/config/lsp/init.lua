@@ -60,16 +60,11 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- 4. Setup Mason and Mason-LSPconfig
 -- ----------------------------------------------------
 require("mason").setup()
-require("mason-lspconfig").setup({
-    automatic_enable = true,
-    -- ensure_installed = { "lua_ls", "python_ls", "gopls", "dockerls" },
-})
+require("mason-lspconfig").setup({})
 
 -- ----------------------------------------------------
 -- 5. Load other LSP related configurations
---    Pass 'on_attach' and 'capabilities' to them.
 -- ----------------------------------------------------
--- Assuming each 'lang_*.lua' module is now a function that accepts these arguments.
 require("config.lsp.completion")
 require("config.lsp.format").setup(on_attach)
 require("config.lsp.format_whitespace")
