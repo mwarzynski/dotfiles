@@ -1,2 +1,2 @@
-vim.keymap.set("n", "<leader>g", vim.cmd.Git);
 require('gitsigns').setup()
+vim.keymap.set("n", "<leader>t", vim.cmd.Git);
