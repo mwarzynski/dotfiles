@@ -24,12 +24,12 @@ local on_attach = function(client, bufnr)
     buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
     buf_set_keymap(bufnr, 'n', 'gl', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-    buf_set_keymap(bufnr, 'n', 'ga', '<cmd> vim.lsp.buf.code_action()<CR>', opts)
-    buf_set_keymap(bufnr, 'n', 'gr', '<cmd> vim.lsp.buf.rename()<CR>', opts)
+    buf_set_keymap(bufnr, 'n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+    buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 
-    buf_set_keymap(bufnr, 'n', '<C-h>', '<cmd> vim.lsp.buf.hover()<CR>', opts)
-    buf_set_keymap(bufnr, 'n', '<C-j>', '<cmd> vim.diagnostic.goto_next()<CR>', opts)
-    buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd> vim.diagnostic.goto_prev()<CR>', opts)
+    buf_set_keymap(bufnr, 'n', '<C-h>', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+    buf_set_keymap(bufnr, 'n', '<C-j>', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+    buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 
     -- Optional: Auto-format on save if the client supports it
     if client.supports_method("textDocument/formatting") then
@@ -60,7 +60,9 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- 4. Setup Mason and Mason-LSPconfig
 -- ----------------------------------------------------
 require("mason").setup()
-require("mason-lspconfig").setup({})
+require("mason-lspconfig").setup({
+    automatic_enable = false
+})
 
 -- ----------------------------------------------------
 -- 5. Load other LSP related configurations
