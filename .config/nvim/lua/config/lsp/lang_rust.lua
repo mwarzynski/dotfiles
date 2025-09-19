@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup(on_attach_func, capabilities_table)
-	require("lspconfig").rust_analyzer.setup({
+	vim.lsp.config("rust_analyzer", {
 		on_attach = on_attach_func, -- Use the shared on_attach function
 		capabilities = capabilities_table, -- Use the shared capabilities table
 

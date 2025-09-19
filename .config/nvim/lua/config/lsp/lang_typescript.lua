@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup(on_attach_func, capabilities_table)
-	require("lspconfig").ts_ls.setup({
+	vim.lsp.config("ts_ls", {
 		capabilities = capabilities_table,
 		filetypes = {
 			"javascript",
@@ -28,7 +28,7 @@ function M.setup(on_attach_func, capabilities_table)
 	})
 
 	-- Enable ESLint as a separate LSP for richer diagnostics
-	require("lspconfig").eslint.setup({
+	vim.lsp.config("eslint", {
 		on_attach = on_attach_func,
 		capabilities = capabilities_table,
 		filetypes = { -- Ensure it runs on all relevant filetypes
@@ -46,7 +46,7 @@ function M.setup(on_attach_func, capabilities_table)
 	})
 
 	-- Enable Tailwind
-	require("lspconfig").tailwindcss.setup({
+	vim.lsp.config("tailwindcss", {
 		on_attach = on_attach_func,
 		capabilities = capabilities_table,
 		filetypes = { "html", "css", "javascriptreact", "typescriptreact", "vue" },

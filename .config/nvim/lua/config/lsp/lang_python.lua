@@ -4,7 +4,7 @@ vim.g.python3_host_prog = "~/.vim/venv/bin/python"
 local M = {}
 
 function M.setup(on_attach_func, capabilities_table)
-	require("lspconfig").pyright.setup({
+	vim.lsp.config("pyright", {
 		on_attach = on_attach_func,
 		capabilities = capabilities_table,
 		settings = {

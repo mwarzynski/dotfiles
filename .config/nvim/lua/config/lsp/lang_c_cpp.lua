@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup(original_on_attach_func, capabilities_table)
-	require("lspconfig").clangd.setup({
+	vim.lsp.config("clangd", {
 		capabilities = capabilities_table,
 		filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "cc", "cxx", "h", "hpp", "hxx" }, -- Comprehensive filetype list
 		cmd = {
